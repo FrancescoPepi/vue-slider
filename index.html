@@ -45,25 +45,23 @@
   </head>
   <body>
     <!-- <div id="app">{{ message }}</div> -->
-    <div class="container-sm">
+    <div id="app" class="container-sm">
       <div class="carousel">
         <div class="card-img">
-          <img src="./img/01.webp" alt="img" />
+          <img :src="images[select].image" alt="img" />
         </div>
         <div class="card-text">
-          <h1>Titolo</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            voluptatibus expedita eaque dolorem unde excepturi maxime! Iusto vel
-            soluta aliquid?
-          </p>
-        </div>
-        <div class="card-thumbnail">
-          <div class="thumbnail">
-            <img src="" alt="" />
-          </div>
+          <h1>{{images[select].title}}</h1>
+          <p>{{images[select].text}}</p>
         </div>
       </div>
+      <div class="card-thumbnail">
+        <div class="thumbnail" v-for="(image,index) in images">
+          <img :src="images[index].image" alt="" />
+        </div>
+      </div>
+      <button type="button" @click="select++">next</button>
+      <button type="button" @click="select--">back</button>
     </div>
   </body>
 </html>

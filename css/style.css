@@ -1,15 +1,21 @@
 .carousel {
-  border: 1px dashed red;
-  /* width: 100%; */
+  /* border: 1px dashed red; */
+  width: 100%;
   height: 500px;
   max-width: 900px;
   color: rgb(247, 239, 239);
   margin: auto;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
 }
 img {
   width: 100%;
+}
+
+.thumbnail img {
+  display: block;
+  width: 200px;
+  object-fit: cover;
 }
 
 .card-img {
@@ -26,4 +32,20 @@ img {
   border-radius: 10px 10px 0px 0px;
   padding: 10px;
   transition: all 0.5s linear;
+}
+
+.card-thumbnail {
+  display: flex;
+  height: 100px;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+.thumbnail {
+  display: flex;
+
+  width: calc(100% / 5);
+  border: 1px solid black;
+  overflow: hidden;
 }
