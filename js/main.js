@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+const thumb = document.getElementById("thumb");
 
 createApp({
   data() {
@@ -32,5 +33,19 @@ createApp({
       ],
       select: 0,
     };
+  },
+
+  methods: {
+    next() {
+      if (this.select < this.images.length - 1) {
+        this.select++;
+      } else {
+        this.select = 0;
+      }
+    },
+    back() {
+      if (this.select > 0) this.select--;
+      else this.select = this.images.length - 1;
+    },
   },
 }).mount("#app");

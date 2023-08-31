@@ -56,12 +56,24 @@
         </div>
       </div>
       <div class="card-thumbnail">
-        <div class="thumbnail" v-for="(image,index) in images">
-          <img :src="images[index].image" alt="" />
+        <div
+          id="thumb"
+          v-for="(image,index) in images"
+          :class="(index == select)?'active':''"
+          class="thumbnail"
+        >
+          <span :class="(index == select)?'active':''" class="index">
+            {{index}}
+          </span>
+          <img :src="image.image" alt="" />
         </div>
       </div>
-      <button type="button" @click="select++">next</button>
-      <button type="button" @click="select--">back</button>
+      <div class="back" type="button" @click="back()">
+        <i class="fa-solid fa-circle-left fa-2xl" style="color: #292929"></i>
+      </div>
+      <div class="next" type="button" @click="next()">
+        <i class="fa-solid fa-circle-right fa-2xl" style="color: #292929"></i>
+      </div>
     </div>
   </body>
 </html>
